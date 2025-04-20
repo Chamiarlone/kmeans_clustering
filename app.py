@@ -14,11 +14,11 @@ from sklearn.datasets import make_blobs
 with open('kmeans_model.pkl', 'rb') as f:
     loaded_model = pickle.load(f)
     
+#set the page config
+st.set_page_config(page_title = "K-means Clustering", layout = "centered") 
+   
 #set the title
 st.title("K-MEANS Clustering Visualizer by Chalermchai Nichee 6531501015")
-
-#set the page config
-st.set_page_config(page_title = "K-means Clustering", layout = "centered")
 
 #load datasets
 X, _ = make_blobs(n_samples=300, centers=loaded_model.n_clusters, cluster_std=0.60, random_state=0)
